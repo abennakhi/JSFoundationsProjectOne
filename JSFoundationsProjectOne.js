@@ -10,7 +10,15 @@
  *
  */
 function filterEvens(numbers) {
-	// your code goes here!
+	let theeven = [];
+
+	for(let i=0; i<numbers.length; i++){
+		if(numbers[i]%2 == 0){
+			theeven.push(numbers[i]);
+		}
+	}
+
+	return theeven;
 }
 
 /**
@@ -25,7 +33,15 @@ function filterEvens(numbers) {
  *
  */
 function filterOdds(numbers) {
-	// your code goes here!
+	let theodd = [];
+
+	for(let i=0; i<numbers.length; i++){
+		if(numbers[i]%2 != 0){
+			theodd.push(numbers[i]);
+		}
+	}
+
+	return theodd;
 }
 
 /**
@@ -39,7 +55,15 @@ function filterOdds(numbers) {
  *
  */
 function sumOdds(numbers) {
-	// your code goes here!
+	var oddSum = 0;
+
+	for(var i=0; i<numbers.length; i++){
+		if(numbers[i]%2 != 0){
+			oddSum = oddSum+numbers[i];
+		}
+	}
+
+	return oddSum;
 }
 
 /**
@@ -59,7 +83,20 @@ function sumOdds(numbers) {
  * 
  */
 function makePairs(names) {
-	// your code goes here!
+	let thepairs = [];
+
+	if(names.length/2 != 0){
+		thepairs.push([names[0]]);
+		for(let i = 1; i < names.length; i= i+2){
+			thepairs.push([names[i],names[i+1]]);
+		}
+	} else {
+		for(let i = 0; i < names.length; i= i+2){
+			thepairs.push([names[i],names[i+1]]);
+		}
+	}
+
+	return thepairs;
 }
 
 /**************************************************
@@ -69,14 +106,14 @@ let numbers = [153,67,9,34,7,67,342,7,34,8656,2,124,5,43];
 let instructors = ["Hamza", "Mshary", "Aziz", "Hussein", "Fawaz"];
 
 // uncomment the following lines to run and test your code.
-// // filterEvens
-// evens = filterEvens(numbers);
-// console.log(evens);
+// filterEvens
+evens = filterEvens(numbers);
+console.log(evens);
 
 // // sumOdds
-// sum = sumOdds(numbers);
-// console.log(sum);
+sum = sumOdds(numbers);
+console.log(sum);
 
 // // makePairs
-// let pairs = makePairs(instructors);
-// console.log(pairs);
+let pairs = makePairs(instructors);
+console.log(pairs);
